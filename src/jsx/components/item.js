@@ -1,4 +1,7 @@
 import React from 'react';
+import ItemButton from './items/button';
+import ItemLink from './items/link';
+import ItemSeparator from './items/separator';
 
 export default React.createClass({
 	render: function() {

@@ -3,6 +3,95 @@
 $link-color: #2dc6d6;
 
 .propertoolbar {
+	.toolbar-ul {
+		padding: 0.5em;
+		margin: 0;
+		border-bottom: 2px solid #0fa1e0;
+	}
+
+	.toolbar-ul li {
+	    /*padding: 0;
+	    padding: 0.5em;*/
+	    @include inline-block();
+	}
+
+	/*.toolbar-ul li.toolbar-button {
+	    border-right: 1px solid #000;
+	    border-bottom: 1px solid #000;
+	    border-top: 1px solid #aaa;
+	    border-left: 1px solid #aaa;
+	 //   padding: 3px 5px;
+	}*/
+
+	.toolbar-ul ul, .toolbar-ul li, .toolbar-ul span, .toolbar-menu a{
+		position: relative;
+		margin: 0;
+		padding: 0;
+	}
+
+	.toolbar-ul:after, .toolbar-ul ul:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+
+	.toolbar-ul li.has-sub ul {
+		display: none;
+		left: 0;
+		position: absolute;
+		top:100%;
+		width: 200px;
+		z-index: 1;
+	}
+
+	.toolbar-ul li.has-sub {
+	}
+
+	.toolbar-ul li.has-sub:hover ul {
+		display: block;
+	}
+
+	.toolbar-ul li:hover:after {
+	  content: '';
+	  display: block;
+	  width: 0;
+	  height: 0;
+	  position: absolute;
+	  left: 50%;
+	  bottom: 0;
+	  border-left: 5px solid transparent;
+	  border-right: 5px solid transparent;
+	  border-bottom: 5px solid #0fa1e0;
+	  margin-left: -5px;
+	}
+
+	.toolbar-ul li.has-sub ul li.has-sub ul {
+		display: none;
+		left: 100%;
+		position: absolute;
+		top:0;
+		width: 200px;
+	}
+
+	.toolbar-ul .has-sub:hover > ul {
+	  display: block;
+	}
+	.toolbar-ul .has-sub ul {
+	  display: none;
+	  position: absolute;
+	  width: 200px;
+	  top: 100%;
+	  left: 0;
+	}
+
+	.toolbar-ul li.has-sub {
+
+	}
+
+	.toolbar-ul li.has-sub:hover ul, .toolbar-ul li.has-sub ul li.has-sub:hover ul {
+		display: block;
+	}
+
 	//TOOLBARS
 	.toolbar-ul {
 		@extend .btn-group;

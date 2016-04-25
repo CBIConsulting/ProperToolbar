@@ -67,16 +67,21 @@ var ProperToolbar =
 
 	var _link2 = _interopRequireDefault(_link);
 
+	var _separator = __webpack_require__(7);
+
+	var _separator2 = _interopRequireDefault(_separator);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	if (true) {
-		__webpack_require__(7);
+		__webpack_require__(8);
 	}
 
 	exports['default'] = ProperToolbar = {
 		Toolbar: _toolbar2['default'],
 		Item: _item2['default'],
 		Button: _button2['default'],
+		Separator: _separator2['default'],
 		Link: _link2['default']
 	};
 	module.exports = exports['default'];
@@ -116,7 +121,7 @@ var ProperToolbar =
 		},
 
 		render: function render() {
-			var classname = 'cbiWidget toolbar-container';
+			var classname = 'propertoolbar toolbar-container';
 			var items = _underscore2['default'].clone(this.props.items);
 			var uniqueId = this.props.uniqueId;
 			var ritems = null;
@@ -176,17 +181,29 @@ var ProperToolbar =
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _button = __webpack_require__(5);
+
+	var _button2 = _interopRequireDefault(_button);
+
+	var _link = __webpack_require__(6);
+
+	var _link2 = _interopRequireDefault(_link);
+
+	var _separator = __webpack_require__(7);
+
+	var _separator2 = _interopRequireDefault(_separator);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	exports['default'] = _react2['default'].createClass({
 		displayName: 'item',
 
 		render: function render() {
-			var Itype = ItemButton;
+			var Itype = _button2['default'];
 			var validItems = {
-				'button': ItemButton,
-				'link': ItemLink,
-				'separator': ItemSeparator
+				'button': _button2['default'],
+				'link': _link2['default'],
+				'separator': _separator2['default']
 			};
 			var liClass = 'toolbar-custom custom-item';
 
@@ -314,7 +331,7 @@ var ProperToolbar =
 					'ul',
 					null,
 					this.props.data.items.map(function (item) {
-						return _react2['default'].createElement(_item2['default'], { data: item, key: item.liKey || CBI.Utils.uniqueid2() });
+						return _react2['default'].createElement(_item2['default'], { data: item, key: item.liKey || _underscore2['default'].uniqueId('toolbar_subitem-') });
 					})
 				);
 			}
@@ -420,7 +437,7 @@ var ProperToolbar =
 					'ul',
 					null,
 					this.props.data.items.map(function (item) {
-						return _react2['default'].createElement(_item2['default'], { data: item, key: item.liKey || CBI.Utils.uniqueid2() });
+						return _react2['default'].createElement(_item2['default'], { data: item, key: item.liKey || _underscore2['default'].uniqueId('toolbar_subitem-') });
 					})
 				);
 			}
@@ -467,6 +484,28 @@ var ProperToolbar =
 
 /***/ },
 /* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	exports["default"] = function (props) {
+	  return _react2["default"].createElement("li", { className: "toolbar-separator" });
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

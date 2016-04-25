@@ -11,7 +11,7 @@ export default React.createClass({
 	},
 
 	render: function() {
-		var classname = 'cbiWidget toolbar-container';
+		var classname = 'propertoolbar toolbar-container';
 		var items = _.clone(this.props.items);
 		var uniqueId = this.props.uniqueId;
 		var ritems = null;

@@ -74,7 +74,7 @@ export default React.createClass({
 			subitems = <ul>
 				{
 					this.props.data.items.map(function(item) {
-						return <ToolbarItem data={item} key={item.liKey || CBI.Utils.uniqueid2()}/>;
+						return <ToolbarItem data={item} key={item.liKey || _.uniqueId('toolbar_subitem-')}/>;
 					})
 				}
 			</ul>;
