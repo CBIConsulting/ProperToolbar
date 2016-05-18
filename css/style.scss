@@ -9,30 +9,10 @@ $link-color: #2dc6d6;
 		border-bottom: 2px solid #0fa1e0;
 	}
 
-	.toolbar-ul li {
-	    /*padding: 0;
-	    padding: 0.5em;*/
-	    @include inline-block();
-	}
-
-	/*.toolbar-ul li.toolbar-button {
-	    border-right: 1px solid #000;
-	    border-bottom: 1px solid #000;
-	    border-top: 1px solid #aaa;
-	    border-left: 1px solid #aaa;
-	 //   padding: 3px 5px;
-	}*/
-
 	.toolbar-ul ul, .toolbar-ul li, .toolbar-ul span, .toolbar-menu a{
 		position: relative;
 		margin: 0;
 		padding: 0;
-	}
-
-	.toolbar-ul:after, .toolbar-ul ul:after {
-		clear: both;
-		content: "";
-		display: block;
 	}
 
 	.toolbar-ul li.has-sub ul {
@@ -42,9 +22,6 @@ $link-color: #2dc6d6;
 		top:100%;
 		width: 200px;
 		z-index: 1;
-	}
-
-	.toolbar-ul li.has-sub {
 	}
 
 	.toolbar-ul li.has-sub:hover ul {
@@ -84,10 +61,6 @@ $link-color: #2dc6d6;
 	  left: 0;
 	}
 
-	.toolbar-ul li.has-sub {
-
-	}
-
 	.toolbar-ul li.has-sub:hover ul, .toolbar-ul li.has-sub ul li.has-sub:hover ul {
 		display: block;
 	}
@@ -102,7 +75,6 @@ $link-color: #2dc6d6;
 		padding: 0;
 		list-style: none;
 		@include filter-gradient(#feffff, #cccccc, vertical); // IE6-9
-		@include background-image(linear-gradient(top, #feffff 0%,#cccccc 100%));
 		//border-top: 1px solid #b2b4b5;
 		border-bottom: 1px solid #b2b4b5;
 		@include border-radius(0);
@@ -150,15 +122,6 @@ $link-color: #2dc6d6;
 				color: #777;
 			}
 
-			&:hover {
-				.btn-caption {
-					color: darken($link-color, 10%);
-				}
-
-				&:after {
-					display: none;
-				}
-			}
 
 			.btn-icon {
 				margin-right: 5px;
@@ -175,6 +138,10 @@ $link-color: #2dc6d6;
 				ul {
 					z-index: 10000;
 				}
+			}
+
+			&:hover {
+				@include background-image(linear-gradient(top, #feffff 0%,#cccccc 100%));
 			}
 		}
 
