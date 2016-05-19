@@ -141,7 +141,7 @@ $link-color: #2dc6d6;
 			}
 
 			&:hover {
-				@include background-image(linear-gradient(top, #feffff 0%,#cccccc 100%));
+				@include background-image(linear-gradient(top, #feffff 0%,#E0E0E0 100%));
 			}
 		}
 
