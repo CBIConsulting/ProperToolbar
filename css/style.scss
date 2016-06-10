@@ -3,6 +3,7 @@
 $link-color: #2dc6d6;
 
 .propertoolbar {
+  background: black;
 	.toolbar-ul {
 		padding: 0.5em;
 		margin: 0;
@@ -67,7 +68,7 @@ $link-color: #2dc6d6;
 
 	//TOOLBARS
 	.toolbar-ul {
-		@extend .btn-group;
+		@extend .btn-group !optional;
 
 		width: 100%;
 		margin: 0;
@@ -124,7 +125,6 @@ $link-color: #2dc6d6;
 
 
 			.btn-icon {
-				margin-right: 5px;
 			}
 
 			select {
