@@ -1,32 +1,13 @@
 .propertoolbar {
-  /*.toolbar-ul li.toolbar-button {
-	    border-right: 1px solid #000;
-	    border-bottom: 1px solid #000;
-	    border-top: 1px solid #aaa;
-	    border-left: 1px solid #aaa;
-	 //   padding: 3px 5px;
-	}*/ }
+  background: black; }
   .propertoolbar .toolbar-ul {
     padding: 0.5em;
     margin: 0;
     border-bottom: 2px solid #0fa1e0; }
-  .propertoolbar .toolbar-ul li {
-    /*padding: 0;
-	    padding: 0.5em;*/
-    display: -moz-inline-stack;
-    display: inline-block;
-    vertical-align: middle;
-    *vertical-align: auto;
-    zoom: 1;
-    *display: inline; }
   .propertoolbar .toolbar-ul ul, .propertoolbar .toolbar-ul li, .propertoolbar .toolbar-ul span, .propertoolbar .toolbar-menu a {
     position: relative;
     margin: 0;
     padding: 0; }
-  .propertoolbar .toolbar-ul:after, .propertoolbar .toolbar-ul ul:after {
-    clear: both;
-    content: "";
-    display: block; }
   .propertoolbar .toolbar-ul li.has-sub ul {
     display: none;
     left: 0;
@@ -71,11 +52,6 @@
     list-style: none;
     *zoom: 1;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFEFFFF', endColorstr='#FFCCCCCC');
-    background-image: -owg-linear-gradient(top, #feffff 0%, #cccccc 100%);
-    background-image: -webkit-linear-gradient(top, #feffff 0%, #cccccc 100%);
-    background-image: -moz-linear-gradient(top, #feffff 0%, #cccccc 100%);
-    background-image: -o-linear-gradient(top, #feffff 0%, #cccccc 100%);
-    background-image: linear-gradient(top, #feffff 0%, #cccccc 100%);
     border-bottom: 1px solid #b2b4b5;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -87,10 +63,10 @@
     z-index: 1; }
     .propertoolbar .toolbar-ul [class^="mv-icon-"]:before,
     .propertoolbar .toolbar-ul [class*=" mv-icon-"]:before {
-      -webkit-transition: all 0.3s false;
+      -webkit-transition: all 0.3s;
       -webkit-transition-delay: 0s;
-      -moz-transition: all 0.3s false false;
-      -o-transition: all 0.3s false false;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
       transition: all 0.3s false false;
       color: #22a1ae; }
     .propertoolbar .toolbar-ul form {
@@ -117,19 +93,13 @@
         *vertical-align: auto;
         zoom: 1;
         *display: inline;
-        -webkit-transition: all 0.3s false;
+        -webkit-transition: all 0.3s;
         -webkit-transition-delay: 0s;
-        -moz-transition: all 0.3s false false;
-        -o-transition: all 0.3s false false;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
         transition: all 0.3s false false;
         line-height: 18px;
         color: #777; }
-      .propertoolbar .toolbar-ul li:hover .btn-caption {
-        color: #22a1ae; }
-      .propertoolbar .toolbar-ul li:hover:after {
-        display: none; }
-      .propertoolbar .toolbar-ul li .btn-icon {
-        margin-right: 5px; }
       .propertoolbar .toolbar-ul li select {
         font-size: 12px;
         height: 20px;
@@ -137,6 +107,12 @@
         padding: 1px 1em; }
       .propertoolbar .toolbar-ul li.has-sub ul {
         z-index: 10000; }
+      .propertoolbar .toolbar-ul li:hover {
+        background-image: -owg-linear-gradient(top, #feffff 0%, #E0E0E0 100%);
+        background-image: -webkit-linear-gradient(top, #feffff 0%, #E0E0E0 100%);
+        background-image: -moz-linear-gradient(top, #feffff 0%, #E0E0E0 100%);
+        background-image: -o-linear-gradient(top, #feffff 0%, #E0E0E0 100%);
+        background-image: linear-gradient(top, #feffff 0%, #E0E0E0 100%); }
     .propertoolbar .toolbar-ul > li {
       padding: 0;
       margin: 0;

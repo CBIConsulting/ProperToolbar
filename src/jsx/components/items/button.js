@@ -47,6 +47,7 @@ export default React.createClass({
 		var subitems = null;
 		var liclass = 'btn toolbar-button';
 		var active = this.state.active;
+		var title = this.props.data.title ? this.props.data.title : '';
 
 		if (typeof this.props.data.visible != 'undefined' && !this.props.data.visible) {
 			return null;
@@ -81,7 +82,7 @@ export default React.createClass({
 		}
 
 		if (icon) {
-			return <li className={liclass}>
+			return <li className={liclass} title={title}>
 				<span className={className} onClick={this.handleClick} onDoubleClick={this.handleDoubleClick}>
 					<div className="btn-icon"><i className={icon}></i></div>
 					<div className="btn-caption">{this.props.data.label}</div>
@@ -90,7 +91,7 @@ export default React.createClass({
 			</li>;
 		}
 
-		return <li className={liclass}>
+		return <li className={liclass} title={title}>
 			<span className={className} onClick={this.handleClick} onDoubleClick={this.handleDoubleClick}>
 				<div className="btn-caption">{this.props.data.label}</div>
 			</span>

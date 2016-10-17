@@ -9,6 +9,7 @@ export default React.createClass({
 		var subitems = null;
 		var liclass = 'btn toolbar-button toolbar-link';
 		var href = '#';
+		var title = this.props.data.title ? this.props.data.title : '';
 
 		if (typeof this.props.data.className != 'undefined' && this.props.data.className) {
 			className += ' ' + this.props.data.className;
@@ -43,7 +44,7 @@ export default React.createClass({
 		}
 
 		if (icon) {
-			return <li className={liclass}>
+			return <li className={liclass} title={title}>
 				<a className={className} href={href}>
 					<span className="btn-icon"><i className={icon}></i></span>
 					<span className="btn-caption">{this.props.data.label}</span>
@@ -52,7 +53,7 @@ export default React.createClass({
 			</li>;
 		}
 
-		return <li className={liclass}>
+		return <li className={liclass} title={title}>
 			<a className={className} href={href}>
 				<span className="btn-caption">{this.props.data.label}</span>
 			</a>
