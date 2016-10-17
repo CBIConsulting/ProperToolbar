@@ -6,14 +6,17 @@ export default React.createClass({
 	getDefaultProps: function() {
 		return {
 			items: [],
-			uniqueId: _.uniqueId('toolbar-')
+			uniqueId: ''
 		};
+	},
+
+	componentWillMount() {
+		this.uniqueId = this.props.uniqueId ? this.props.uniqueId : _.uniqueId('toolbar-');
 	},
 
 	render: function() {
 		var classname = 'propertoolbar toolbar-container';
 		var items = _.clone(this.props.items);
-		var uniqueId = this.props.uniqueId;
 		var ritems = null;
 
 		if (items && _.isArray(items) && items.length) {
@@ -22,7 +25,7 @@ export default React.createClass({
 			});
 
 			ritems = items.map(function(item) {
-				var liKey = item.liKey || _.uniqueId('tbitem-');
+				var liKey = item.liKey ? item.liKey : _.uniqueId('tbitem-');
 
 				return <ToolbarItem data={item} key={ liKey }/>;
 			});
@@ -32,8 +35,8 @@ export default React.createClass({
 			classname += ' ' + this.props.className;
 		}
 
-		return <div className={classname} id={ uniqueId }>
-			<ul id={ uniqueId + '_ul'}  className="toolbar-ul">
+		return <div className={classname} id={this.uniqueId}>
+			<ul id={ this.uniqueId + '_ul'}  className="toolbar-ul">
 				{ritems}
 			</ul>
 		</div>;

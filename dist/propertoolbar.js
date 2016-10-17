@@ -116,14 +116,18 @@ var ProperToolbar =
 		getDefaultProps: function getDefaultProps() {
 			return {
 				items: [],
-				uniqueId: _underscore2['default'].uniqueId('toolbar-')
+				uniqueId: ''
 			};
 		},
+
+		componentWillMount: function componentWillMount() {
+			this.uniqueId = this.props.uniqueId ? this.props.uniqueId : _underscore2['default'].uniqueId('toolbar-');
+		},
+
 
 		render: function render() {
 			var classname = 'propertoolbar toolbar-container';
 			var items = _underscore2['default'].clone(this.props.items);
-			var uniqueId = this.props.uniqueId;
 			var ritems = null;
 
 			if (items && _underscore2['default'].isArray(items) && items.length) {
@@ -132,7 +136,7 @@ var ProperToolbar =
 				});
 
 				ritems = items.map(function (item) {
-					var liKey = item.liKey || _underscore2['default'].uniqueId('tbitem-');
+					var liKey = item.liKey ? item.liKey : _underscore2['default'].uniqueId('tbitem-');
 
 					return _react2['default'].createElement(_item2['default'], { data: item, key: liKey });
 				});
@@ -144,10 +148,10 @@ var ProperToolbar =
 
 			return _react2['default'].createElement(
 				'div',
-				{ className: classname, id: uniqueId },
+				{ className: classname, id: this.uniqueId },
 				_react2['default'].createElement(
 					'ul',
-					{ id: uniqueId + '_ul', className: 'toolbar-ul' },
+					{ id: this.uniqueId + '_ul', className: 'toolbar-ul' },
 					ritems
 				)
 			);
@@ -208,13 +212,15 @@ var ProperToolbar =
 			var liClass = 'toolbar-custom custom-item';
 
 			if (this.props.data.custom) {
+				var title = this.props.data.title ? this.props.data.title : '';
+
 				if (typeof this.props.data.liClass != 'undefined' && this.props.data.liClass) {
 					liClass += ' ' + this.props.data.liClass;
 				}
 
 				return _react2['default'].createElement(
 					'li',
-					{ className: liClass },
+					{ className: liClass, title: title },
 					this.props.data.custom
 				);
 			}
@@ -303,6 +309,7 @@ var ProperToolbar =
 			var subitems = null;
 			var liclass = 'btn toolbar-button';
 			var active = this.state.active;
+			var title = this.props.data.title ? this.props.data.title : '';
 
 			if (typeof this.props.data.visible != 'undefined' && !this.props.data.visible) {
 				return null;
@@ -339,7 +346,7 @@ var ProperToolbar =
 			if (icon) {
 				return _react2['default'].createElement(
 					'li',
-					{ className: liclass },
+					{ className: liclass, title: title },
 					_react2['default'].createElement(
 						'span',
 						{ className: className, onClick: this.handleClick, onDoubleClick: this.handleDoubleClick },
@@ -360,7 +367,7 @@ var ProperToolbar =
 
 			return _react2['default'].createElement(
 				'li',
-				{ className: liclass },
+				{ className: liclass, title: title },
 				_react2['default'].createElement(
 					'span',
 					{ className: className, onClick: this.handleClick, onDoubleClick: this.handleDoubleClick },
@@ -409,6 +416,7 @@ var ProperToolbar =
 			var subitems = null;
 			var liclass = 'btn toolbar-button toolbar-link';
 			var href = '#';
+			var title = this.props.data.title ? this.props.data.title : '';
 
 			if (typeof this.props.data.className != 'undefined' && this.props.data.className) {
 				className += ' ' + this.props.data.className;
@@ -445,7 +453,7 @@ var ProperToolbar =
 			if (icon) {
 				return _react2['default'].createElement(
 					'li',
-					{ className: liclass },
+					{ className: liclass, title: title },
 					_react2['default'].createElement(
 						'a',
 						{ className: className, href: href },
@@ -466,7 +474,7 @@ var ProperToolbar =
 
 			return _react2['default'].createElement(
 				'li',
-				{ className: liclass },
+				{ className: liclass, title: title },
 				_react2['default'].createElement(
 					'a',
 					{ className: className, href: href },

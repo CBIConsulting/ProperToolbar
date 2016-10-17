@@ -1,14 +1,14 @@
 {
   "name": "react-propertoolbar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A proper toolbar component for react",
   "main": "index.js",
   "scripts": {
     "test": "webpack && karma start --single-run --no-auto-watch karma.conf.js",
     "watch": "karma start --auto-watch --no-single-run karma.conf.js",
-    "start": "webpack-dev-server --hot --inline --config webpack.config.example.js",
+    "start": "webpack-dev-server --hot --config webpack.config.example.js",
     "build": "babel src/jsx --out-dir lib && webpack && cp -rvf src/css/* css/",
-    "release": "webpack --config webpack.config.min.js",
+    "release": "npm run build && webpack --config webpack.config.min.js",
     "build-example": "webpack --config webpack.config.example.dist.js"
   },
   "repository": {

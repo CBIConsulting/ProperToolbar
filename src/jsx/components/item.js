@@ -14,11 +14,13 @@ export default React.createClass({
 		var liClass = 'toolbar-custom custom-item';
 
 		if (this.props.data.custom) {
+			var title = this.props.data.title ? this.props.data.title : '';
+
 			if (typeof this.props.data.liClass != 'undefined' && this.props.data.liClass) {
 				liClass += ' ' + this.props.data.liClass;
 			}
 
-			return <li className={liClass}>{this.props.data.custom}</li>;
+			return <li className={liClass} title={title}>{this.props.data.custom}</li>;
 		}
 
 		if (typeof validItems[this.props.data.type] != 'undefined') {
@@ -29,6 +31,6 @@ export default React.createClass({
 			Itype = this.props.data.type;
 		}
 
-		return <Itype data={this.props.data} />;
+		return <Itype data={this.props.data}/>;
 	}
 });
