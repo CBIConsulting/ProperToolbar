@@ -494,20 +494,39 @@ var ProperToolbar =
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	exports["default"] = function (props) {
-	  return _react2["default"].createElement("li", { className: "toolbar-separator" });
+	exports['default'] = function (props) {
+		var className = "toolbar-separator";
+		var content = null;
+
+		if (props.data.liClass) {
+			className += ' ' + props.data.liClass;
+		}
+
+		if (props.data.message) {
+			content = _react2['default'].createElement(
+				'div',
+				{ className: 'tb-separator-msg' },
+				props.data.message
+			);
+		}
+
+		return _react2['default'].createElement(
+			'li',
+			{ className: className },
+			content
+		);
 	};
 
 	module.exports = exports['default'];
